@@ -6,5 +6,5 @@ setup(name='jarviscloud',
       author='auth',
       author_email='author@email.com',
       license='MIT',
-      packages=['mypackage'],
+      packages=['jarviscloud'],
       zip_safe=False)
