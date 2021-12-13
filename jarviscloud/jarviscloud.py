@@ -8,6 +8,6 @@ path = Path('/home/.jarviscloud/jarvisconfig')
 
 
 def pause():
-    token, id = path.open().read().split()
+    token, id, user_id = path.open().read().split()
     requests.post('https://backendprod.jarvislabs.ai:8000/pause',
                   json={'jwt': token, 'id': id}, verify=False)
