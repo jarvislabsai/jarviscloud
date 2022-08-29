@@ -8,7 +8,8 @@ path = Path('/home/.jarviscloud/jarvisconfig')
 
 
 def pause():
-    token, id, user_id = path.open().read().split()
+    #token, id, user_id = path.open().read().split()
+    token, id, user_id, machine_name = path.open().read().strip().split('\n')
     if len(token) > 100:
         requests.post('https://backendprod.jarvislabs.ai:8000/pause',
                     json={'jwt': token, 'id': id}, verify=False)
@@ -18,7 +19,8 @@ def pause():
 
     
 def destroy():
-    token, id, user_id = path.open().read().split()
+    #token, id, user_id = path.open().read().split()
+    token, id, user_id, machine_name = path.open().read().strip().split('\n')
     if len(token) > 100:
         requests.post('https://backendprod.jarvislabs.ai:8000/destroy',
                     json={'jwt': token, 'id': id}, verify=False)
